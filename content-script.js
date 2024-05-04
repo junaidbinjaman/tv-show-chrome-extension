@@ -1,2 +1,10 @@
-console.log('Hello from content scripts');
-document.querySelector("body > section > devsite-book-nav > div > input[type=text]").value = "Junaid Bin Jaman"
+const text = [];
+const aTags = document.getElementsByTagName('a');
+
+for (const tag of aTags) {
+    text.push(tag.textContent);
+}
+
+chrome.storage.local.set({
+    text
+})

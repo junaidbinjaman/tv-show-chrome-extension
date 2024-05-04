@@ -34,3 +34,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 });
 
 console.log('Background script running');
+
+chrome.storage.local.get(["text"], (res) => {
+  console.log(res);
+})
